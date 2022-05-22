@@ -25,17 +25,17 @@ jobs:
 
     steps:
     #Code Checkout#
-   
-    - name: Set up Node
-      uses: actions/setup-node@v1
-      with:
-        node-version: 12
+    
     - name: ' Checkout repository on branch: ${{ github.REF }}'
       uses: actions/checkout@v2
       continue-on-error: ${{ env.CONTINUE_ON_ERROR }}
       with:
         ref: ${{ github.REF }}
         fetch-depth: 0
+    - name: Set up Node
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12
     - name: Opening pull request
       id: pull
       uses: ./
@@ -44,12 +44,7 @@ jobs:
         FROM_BRANCH: "main"
         TO_BRANCH: "develop"
     
-    - name: ' Checkout repository on branch: ${{ github.REF }}'
-      uses: actions/checkout@v2
-      continue-on-error: ${{ env.CONTINUE_ON_ERROR }}
-      with:
-        ref: ${{ github.REF }}
-        fetch-depth: 0
+  
       
     - name: Step 2 - Set up JDK 11
       id: setup_jdk
