@@ -36,13 +36,13 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 12
-    #- name: Opening pull request
-     # id: pull
-     # uses: ./
-      #with:
-        #GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        #FROM_BRANCH: "main"
-       # TO_BRANCH: "develop"
+    - name: Opening pull request
+      id: pull
+      uses: ./
+      with:
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        FROM_BRANCH: "main"
+        TO_BRANCH: "develop"
     
   
       
