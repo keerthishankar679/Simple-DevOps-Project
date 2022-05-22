@@ -34,7 +34,7 @@ jobs:
         fetch-depth: 0
     - name: Run a one-line script
       run: |
-        echo checking ls
+        echo checking list
         ls -a
     - name: Set up Node
       uses: actions/setup-node@v1
