@@ -32,10 +32,6 @@ jobs:
       with:
         ref: ${{ github.REF }}
         fetch-depth: 0
-    - name: Run a one-line script
-      run: |
-        echo checking lists
-        ls -a
     - name: Set up Node
       uses: actions/setup-node@v1
       with:
